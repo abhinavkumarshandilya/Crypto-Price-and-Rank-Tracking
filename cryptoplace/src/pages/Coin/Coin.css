@@ -1,0 +1,163 @@
+/* Coin.css */
+.coin {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Match Home.css */
+}
+
+/* Coin name and logo */
+.coin-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.coin-name img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.coin-name p {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  background: linear-gradient(90deg, #8b5cf6, #22d3ee); /* Match Home.css */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Chart container */
+.coin-chart {
+  width: 100%;
+  min-height: 400px;
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #ffffff; /* White background for chart */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px;
+  background-color: #ffffff; /* White background */
+}
+
+/* Ensure the chart itself takes full width and height */
+.chart-container > div {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* Style for no data message */
+.coin-chart p,
+.chart-container p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #6b7280;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Coin details */
+.coin-details {
+  margin-top: 20px;
+}
+
+.coin-details p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin: 10px 0;
+  color: #e2e8f0;
+}
+
+.coin-details p:first-child {
+  font-weight: bold;
+  color: #22d3ee; /* Highlight market rank */
+}
+
+.coin-details span {
+  font-weight: bold;
+}
+
+/* Error message and retry button */
+.coin p.error {
+  color: #f87171;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-bottom: 20px;
+}
+
+.coin button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #8b5cf6, #22d3ee); /* Match Home.css */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.coin button:hover {
+  background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+  transform: scale(1.05);
+}
+
+/* Spinner */
+.coin .spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.coin .spin {
+  width: 65px;
+  height: 65px;
+  border: 5px solid #6b7280;
+  border-top: 5px solid #22d3ee; /* Match theme */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .coin {
+    padding: 10px;
+  }
+
+  .coin-name img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .coin-name p {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  }
+
+  .coin-chart {
+    min-height: 300px;
+  }
+
+  .chart-container,
+  .chart-container > div {
+    height: 300px !important;
+  }
+
+  .coin-details p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+  }
+}
